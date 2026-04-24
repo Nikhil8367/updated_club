@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squid-O-Quiz | GVP DSC</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .event-hero {
+            height: 500px;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: -80px;
+            z-index: 0;
+        }
+        .event-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .v2-content-card {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/DSlogo.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-primary">
+                <span class="gradient-text">GVP DSC</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container py-32">
+        <div class="event-hero reveal">
+            <img src="assets/images/soq_poster.jpeg">
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-deep to-transparent"></div>
+        </div>
+
+        <div class="v2-content-card glass p-8 md:p-16 reveal delay-200">
+            <div class="flex flex-wrap items-end justify-between gap-8 mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold">Upcoming Event • Contest</span>
+                    <h1 class="text-4xl md:text-6xl mt-4 mb-2">Squid-O-<span class="gradient-text">Quiz</span></h1>
+                    <p class="text-text-muted">Survival of the smartest. A data-driven quiz thriller.</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/10 text-center min-w-[200px]">
+                    <span class="text-xs text-text-muted uppercase">Event Date</span>
+                    <p class="text-xl font-bold mt-1">15 FEB 2025</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 space-y-8">
+                    <section>
+                        <h3 class="text-2xl mb-4">The Challenge</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            Inspired by the popular survival series, Squid-O-Quiz puts your analytical and general knowledge skills to the ultimate test. Navigate through multiple rounds of high-stakes questioning where accuracy and speed are your only allies.
+                        </p>
+                    </section>
+                    <section class="grid grid-cols-2 gap-4">
+                        <div class="glass p-6 bg-primary/5 border-primary/20">
+                            <h4 class="text-primary mb-2">Prizes</h4>
+                            <p class="text-xs text-text-muted">Exciting rewards for the final survivors.</p>
+                        </div>
+                        <div class="glass p-6 bg-secondary/5 border-secondary/20">
+                            <h4 class="text-secondary mb-2">Eligibility</h4>
+                            <p class="text-xs text-text-muted">Open to all GVPCE(A) students.</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass p-8 border-primary/30">
+                        <h4 class="font-bold mb-6">Game Rules</h4>
+                        <ul class="text-sm space-y-4 text-text-muted">
+                            <li class="flex gap-3">🦑 <span class="flex-1">Strict Time Limits</span></li>
+                            <li class="flex gap-3">🦑 <span class="flex-1">Elimination Rounds</span></li>
+                            <li class="flex gap-3">🦑 <span class="flex-1">Team Play Allowed</span></li>
+                            <li class="flex gap-3">🦑 <span class="flex-1">Data-Centric Topics</span></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary w-full justify-center">Register Now →</button>
+                    <a href="events.html" class="btn glass w-full justify-center">View Other Events</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

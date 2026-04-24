@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Vault | GVP DSC</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .video-stage {
+            position: relative;
+            background: #000;
+            border-radius: 40px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+        }
+        .video-stage video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        .video-item-v2 {
+            padding: 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .video-item-v2:hover {
+            background: rgba(255,255,255,0.03);
+            border-color: var(--glass-border);
+        }
+        .video-item-v2.active {
+            background: rgba(var(--primary-rgb), 0.1);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/DSlogo.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-primary">
+                <span class="gradient-text">GVP DSC</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="videos.html" class="active">Lectures</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container py-32">
+        <div class="grid lg:grid-cols-3 gap-12">
+            <!-- Active Stage -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="video-stage reveal">
+                    <video id="v2-player" controls poster="assets/images/background.jpg">
+                        <source src="assets/videos/data science vid.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="glass p-10 reveal delay-100">
+                    <h2 id="v2-title" class="text-3xl mb-4">GVP DSC <span class="gradient-text">2024 Showcase</span></h2>
+                    <p class="text-text-muted">Explore our curated collection of technical talks, project showcases, and student-led seminars recorded live at GVPCE(A).</p>
+                </div>
+            </div>
+
+            <!-- Playlist -->
+            <div class="space-y-6 reveal delay-200">
+                <div class="glass p-8 h-fit">
+                    <h3 class="text-xl mb-8 uppercase tracking-widest text-primary font-black">Archive</h3>
+                    <div class="space-y-4">
+                        <div class="video-item-v2 active" data-src="assets/videos/data science vid.mp4" data-title="Community Overview 2024">
+                            <h4 class="text-sm font-bold">01. 2024 Showcase</h4>
+                            <p class="text-[10px] text-text-muted mt-1 uppercase tracking-widest">General • 12:45</p>
+                        </div>
+                        <div class="video-item-v2" data-src="assets/videos/part1.mp4" data-title="Data Science Fundamentals">
+                            <h4 class="text-sm font-bold">02. DS Fundamentals</h4>
+                            <p class="text-[10px] text-text-muted mt-1 uppercase tracking-widest">Tutorial • 08:30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-8">
+                    <h4 class="font-bold mb-4">Need Help?</h4>
+                    <p class="text-xs text-text-muted">Check out our GitHub repository for code snippets used in these lectures.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        $('.video-item-v2').on('click', function() {
+            const src = $(this).data('src');
+            const title = $(this).data('title');
+            
+            $('.video-item-v2').removeClass('active');
+            $(this).addClass('active');
+            
+            $('#v2-title').html(title.replace(' ', ' <span class="gradient-text">') + '</span>');
+            const player = $('#v2-player')[0];
+            player.src = src;
+            player.play();
+        });
+    </script>
+</body>
+</html>

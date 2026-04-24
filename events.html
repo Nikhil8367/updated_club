@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Vault | GVP DSC</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .event-card-v2 {
+            display: flex;
+            flex-direction: column;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .event-card-v2:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+        }
+        .event-media {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+        }
+        .event-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .event-card-v2:hover .event-media img {
+            transform: scale(1.1);
+        }
+        .category-filter {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
+            padding: 8px 24px;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .category-filter.active, .category-filter:hover {
+            background: var(--primary);
+            color: black;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/DSlogo.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-primary">
+                <span class="gradient-text">GVP DSC</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="videos.html">Lectures</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container py-32">
+        <header class="text-center mb-16 reveal">
+            <h1 class="text-5xl md:text-7xl mb-6">The <span class="gradient-text">Vault</span></h1>
+            <p class="text-text-muted max-w-2xl mx-auto">Relive the milestones. From foundational workshops to state-wide summits.</p>
+        </header>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-20 reveal delay-100">
+            <button class="category-filter active" data-filter="all">All Events</button>
+            <button class="category-filter" data-filter="workshop">Workshops</button>
+            <button class="category-filter" data-filter="contest">Contests</button>
+            <button class="category-filter" data-filter="summit">Summits</button>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="events-grid">
+            <!-- Squid-O-Quiz -->
+            <div class="glass event-card-v2 reveal" data-category="contest">
+                <div class="event-media">
+                    <img src="assets/images/soq_poster.jpeg" alt="Squid-O-Quiz">
+                    <div class="absolute top-4 right-4 px-3 py-1 bg-primary text-black text-[10px] font-black rounded-full">UPCOMING</div>
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-primary font-bold">15 FEB 2025</span>
+                    <h3 class="text-2xl mt-2 mb-4">Squid-O-Quiz</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">The ultimate survival quiz inspired by the data-driven world. Test your knowledge under pressure.</p>
+                    <a href="squid-o-quiz.html" class="btn btn-primary w-full justify-center py-3 text-xs">Participate →</a>
+                </div>
+            </div>
+
+            <!-- DSA Workshop -->
+            <div class="glass event-card-v2 reveal delay-100" data-category="workshop">
+                <div class="event-media">
+                    <img src="assets/images/poster.jpg" alt="DSA Workshop">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-secondary font-bold">28 DEC 2024</span>
+                    <h3 class="text-2xl mt-2 mb-4">DSA Mastery</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">Deep dive into data structures and their algorithmic complexities with hands-on labs.</p>
+                    <a href="data-structures.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Learn More</a>
+                </div>
+            </div>
+
+            <!-- AI Summit -->
+            <div class="glass event-card-v2 reveal delay-200" data-category="summit">
+                <div class="event-media">
+                    <img src="assets/images/7.png" alt="AI Summit">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-accent font-bold">16 DEC 2024</span>
+                    <h3 class="text-2xl mt-2 mb-4">AI Summit</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">Connecting leaders from industry and academia to discuss Agentic AI and LLM futures.</p>
+                    <a href="ai-summit.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Details</a>
+                </div>
+            </div>
+
+            <!-- Get the Git -->
+            <div class="glass event-card-v2 reveal" data-category="workshop">
+                <div class="event-media">
+                    <img src="assets/images/5.jpg" alt="Get the Git">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-primary font-bold">11 NOV 2024</span>
+                    <h3 class="text-2xl mt-2 mb-4">Get the Git</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">Mastering version control and open-source collaboration on GitHub.</p>
+                    <a href="git-github.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Workshop Docs</a>
+                </div>
+            </div>
+
+            <!-- AlgoZenith -->
+            <div class="glass event-card-v2 reveal delay-100" data-category="workshop">
+                <div class="event-media">
+                    <img src="assets/images/40.jpg" alt="AlgoZenith">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-accent font-bold">15 JAN 2023</span>
+                    <h3 class="text-2xl mt-2 mb-4">AlgoZenith</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">Mastering advanced algorithms and competitive programming.</p>
+                    <a href="algo-zenith.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Workshop Docs</a>
+                </div>
+            </div>
+
+            <!-- Data Dynasty -->
+            <div class="glass event-card-v2 reveal delay-100" data-category="summit">
+                <div class="event-media">
+                    <img src="assets/images/data dy.jpeg" alt="Data Dynasty">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-secondary font-bold">13 SEP 2024</span>
+                    <h3 class="text-2xl mt-2 mb-4">Data Dynasty</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">NASSCOM-backed grand inauguration event for the 2024 academic cycle.</p>
+                    <a href="data-dynasty.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Highlights</a>
+                </div>
+            </div>
+
+            <!-- Code Quest -->
+            <div class="glass event-card-v2 reveal" data-category="contest">
+                <div class="event-media">
+                    <img src="assets/images/6.jpg" alt="Code Quest">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-secondary font-bold">25 NOV 2024</span>
+                    <h3 class="text-2xl mt-2 mb-4">Code Quest</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">A high-stakes algorithmic challenge testing speed and logic.</p>
+                    <a href="code-quest.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Results</a>
+                </div>
+            </div>
+
+            <!-- Python Workshop -->
+            <div class="glass event-card-v2 reveal delay-100" data-category="workshop">
+                <div class="event-media">
+                    <img src="assets/images/python event.jpeg" alt="Python Workshop">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-primary font-bold">28 SEP 2024</span>
+                    <h3 class="text-2xl mt-2 mb-4">Python Programming</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">Foundational workshop on Python for Data Science.</p>
+                    <a href="python-workshop.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Workshop Docs</a>
+                </div>
+            </div>
+
+            <!-- Golden Duo -->
+            <div class="glass event-card-v2 reveal delay-200" data-category="summit">
+                <div class="event-media">
+                    <img src="assets/images/cc.jpeg" alt="Golden Duo">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-accent font-bold">10 DEC 2022</span>
+                    <h3 class="text-2xl mt-2 mb-4">Golden Duo</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">Fusion of data talks and competitive coding challenges.</p>
+                    <a href="golden-duo.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Legacy Page</a>
+                </div>
+            </div>
+
+            <!-- Inauguration -->
+            <div class="glass event-card-v2 reveal" data-category="summit">
+                <div class="event-media">
+                    <img src="assets/images/ia.jpeg" alt="Inauguration">
+                </div>
+                <div class="p-8">
+                    <span class="text-[10px] uppercase tracking-widest text-primary font-bold">24 NOV 2022</span>
+                    <h3 class="text-2xl mt-2 mb-4">Inauguration</h3>
+                    <p class="text-text-muted text-sm line-clamp-3 mb-6">The grand beginning of the GVP Data Science Club.</p>
+                    <a href="inauguration.html" class="btn glass w-full justify-center py-3 text-xs border-glass-border hover:bg-glass-bg">Memories</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-40 border-t border-white/10 py-12">
+        <div class="container text-center text-[10px] text-text-muted uppercase tracking-[0.5em]">
+            © 2025 GVP DATA SCIENCE CLUB • BUILT FOR THE FUTURE
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.category-filter');
+        const cards = document.querySelectorAll('.event-card-v2');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVP DSC | Deep Science. Deeper Insights.</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .expertise-card {
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+        .expertise-card:hover {
+            border-left-width: 12px;
+            background: rgba(var(--primary-rgb), 0.05);
+        }
+        .roadmap-line {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--glass-border);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .roadmap-line { left: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/DSlogo.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-primary">
+                <span class="gradient-text">DSC GVPCE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="videos.html">Lectures</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="container pt-40 pb-20">
+        <section class="min-h-[80vh] flex flex-col justify-center items-center text-center reveal">
+            <div class="glass py-2 mb-8 bg-white/5 border-white/10 rounded-full px-8 backdrop-blur-3xl">
+                <span class="text-xs uppercase tracking-[0.4em] font-bold text-primary">Est. 2022 • Innovation Hub</span>
+            </div>
+            <h1 class="text-6xl md:text-9xl mb-10 leading-tight">
+                Decency in <br>
+                <span class="gradient-text">Data Science</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-text-muted max-w-3xl mx-auto mb-16 leading-relaxed">
+                We don't just process data; we decode the future. A premium community for engineers pushing the boundaries of machine learning and intelligent systems.
+            </p>
+            <div class="flex flex-wrap gap-6 justify-center">
+                <a href="events.html" class="btn bg-primary text-black px-10 py-4 rounded-full font-bold shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] hover:scale-105 transition-all">Explore Archives</a>
+                <a href="#about" class="btn glass px-10 py-4 rounded-full font-bold border-white/10 hover:bg-white/5 transition-all">Who We Are</a>
+            </div>
+        </section>
+
+        <!-- Expertise Grid -->
+        <section id="about" class="mt-40">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-6xl mb-6">Our <span class="gradient-text">Core Domains</span></h2>
+                <p class="text-text-muted">Mastering the pillars of modern intelligence.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mb-40">
+                <div class="card-v3 expertise-card reveal delay-100">
+                    <span class="text-3xl mb-6 block">🧠</span>
+                    <h3 class="text-2xl mb-4">Neural Networks</h3>
+                    <p class="text-text-muted text-sm">Deep learning architectures, backpropagation, and transformer models for complex pattern recognition.</p>
+                </div>
+                <div class="card-v3 expertise-card reveal delay-200">
+                    <span class="text-3xl mb-6 block">📊</span>
+                    <h3 class="text-2xl mb-4">Predictive Analytics</h3>
+                    <p class="text-text-muted text-sm">Turning historical patterns into future foresight using advanced statistical modelling and regression.</p>
+                </div>
+                <div class="card-v3 expertise-card reveal delay-300">
+                    <span class="text-3xl mb-6 block">🤖</span>
+                    <h3 class="text-2xl mb-4">Computer Vision</h3>
+                    <p class="text-text-muted text-sm">Empowering machines to interpret and understand the visual world through pixel-level analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Highlights -->
+        <section class="mb-40">
+            <div class="bento-grid">
+                <div class="card-v3 bento-large reveal flex flex-col justify-end group overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <img src="assets/images/DSlogo2.png" class="absolute top-[-50px] right-[-50px] w-64 opacity-5 rotate-12">
+                    <h2 class="text-4xl mb-6">The <span class="text-primary">GVP Elite</span></h2>
+                    <p class="text-text-muted max-w-md">The Data Science Club is Gayatri Vidya Parishad's premier technical body dedicated to the art and science of information.</p>
+                    <div class="mt-10 flex gap-4">
+                        <span class="text-xs font-bold border border-primary/30 px-4 py-2 rounded-full text-primary">20+ Events</span>
+                        <span class="text-xs font-bold border border-secondary/30 px-4 py-2 rounded-full text-secondary">500+ Members</span>
+                    </div>
+                </div>
+
+                <div class="card-v3 bento-tall reveal delay-200 border-primary/20">
+                    <h3 class="text-xl mb-6">Flagship Event</h3>
+                    <div class="aspect-square rounded-2xl overflow-hidden mb-6">
+                        <img src="assets/images/soq_poster.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold">Squid-O-Quiz</h4>
+                    <p class="text-xs text-text-muted mt-2">Registration for our 2025 data-thriller is now open.</p>
+                    <a href="squid-o-quiz.html" class="text-xs text-primary font-bold mt-4 inline-block underline">Join the Game</a>
+                </div>
+
+                <div class="card-v3 reveal delay-300 flex flex-col justify-center text-center">
+                    <span class="text-5xl font-black gradient-text">25+</span>
+                    <p class="text-[10px] text-text-muted uppercase tracking-widest mt-2">Expert Sessions</p>
+                </div>
+
+                <div class="card-v3 reveal delay-400">
+                    <h3 class="text-lg">Open Source</h3>
+                    <p class="text-xs text-text-muted mt-2">We contribute back to the community via GVP Redux.</p>
+                    <div class="h-2 bg-white/5 rounded-full mt-6 overflow-hidden">
+                        <div class="w-3/4 h-full bg-primary shadow-[0_0_10px_var(--primary)]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mb-40">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl mb-6 font-bold">Community <span class="gradient-text">Voices</span></h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="card-v3 reveal">
+                    <p class="italic text-text-muted mb-8 leading-relaxed">"The AI Summit changed how I view agentic workflows. Being part of this club is about more than just coding; it's about leading the technical conversation."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="assets/images/bhuvana.jpeg" class="w-12 h-12 rounded-full object-cover border-2 border-primary">
+                        <div>
+                            <h4 class="font-bold">Sandhya B.</h4>
+                            <p class="text-[10px] uppercase text-primary">Class of 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-v3 reveal delay-200">
+                    <p class="italic text-text-muted mb-8 leading-relaxed">"GVP DSC provided the perfect platform to bridge my theoretical knowledge with industry projects. The workshops are truly world-class."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="assets/images/pranay.jpeg" class="w-12 h-12 rounded-full object-cover border-2 border-secondary">
+                        <div>
+                            <h4 class="font-bold">Pranay V.</h4>
+                            <p class="text-[10px] uppercase text-secondary">VP, DSC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="mb-40 relative">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl mb-6 font-bold">2025 <span class="gradient-text">Roadmap</span></h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-12">
+                <div class="roadmap-line"></div>
+                <div class="relative flex items-center reveal pl-12 md:pl-0 md:justify-end">
+                    <div class="md:w-5/12 card-v3">
+                        <span class="text-sm text-primary font-bold">Q1 - FEB</span>
+                        <h4 class="text-xl my-2">Squid-O-Quiz</h4>
+                        <p class="text-xs text-text-muted">Our flagship gamified knowledge competition.</p>
+                    </div>
+                    <div class="absolute left-[-2px] md:left-1/2 w-4 h-4 bg-primary rounded-full transform md:translate-x-[-50%] shadow-[0_0_15px_var(--primary)]"></div>
+                </div>
+                <div class="relative flex items-center reveal pl-12 md:pl-0 md:justify-start">
+                    <div class="md:w-5/12 card-v3">
+                        <span class="text-sm text-secondary font-bold">Q2 - APR</span>
+                        <h4 class="text-xl my-2">LLM Workshop</h4>
+                        <p class="text-xs text-text-muted">Fine-tuning large language models for local deployment.</p>
+                    </div>
+                    <div class="absolute left-[-2px] md:left-1/2 w-4 h-4 bg-secondary rounded-full transform md:translate-x-[-50%] shadow-[0_0_15px_var(--secondary)]"></div>
+                </div>
+                <div class="relative flex items-center reveal pl-12 md:pl-0 md:justify-end">
+                    <div class="md:w-5/12 card-v3">
+                        <span class="text-sm text-accent font-bold">Q3 - SEP</span>
+                        <h4 class="text-xl my-2">GVP Data Expo</h4>
+                        <p class="text-xs text-text-muted">Showcasing top-tier student projects to industry partners.</p>
+                    </div>
+                    <div class="absolute left-[-2px] md:left-1/2 w-4 h-4 bg-accent rounded-full transform md:translate-x-[-50%] shadow-[0_0_15px_var(--accent)]"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-40">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl font-bold mb-4">Common <span class="gradient-text">Questions</span></h2>
+            </div>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <div class="card-v3 p-6 reveal">
+                    <h4 class="font-bold flex justify-between cursor-pointer">Who can join the club? <span class="text-primary">+</span></h4>
+                    <p class="text-xs text-text-muted mt-4">The club is open to all students of GVPCE(A) with an interest in Data Science, regardless of their branch.</p>
+                </div>
+                <div class="card-v3 p-6 reveal delay-100">
+                    <h4 class="font-bold flex justify-between cursor-pointer">Are events free for members? <span class="text-primary">+</span></h4>
+                    <p class="text-xs text-text-muted mt-4">Most our workshops are free or highly subsidized for official club members.</p>
+                </div>
+                <div class="card-v3 p-6 reveal delay-200">
+                    <h4 class="font-bold flex justify-between cursor-pointer">How do I contribute to GVP Redux? <span class="text-primary">+</span></h4>
+                    <p class="text-xs text-text-muted mt-4">You can join our tech team during the recruitment season held every September.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-40 border-t border-white/10 py-12">
+        <div class="container text-center text-[10px] text-text-muted uppercase tracking-[0.5em]">
+            © 2025 GVP DATA SCIENCE CLUB • BUILT FOR THE FUTURE
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
