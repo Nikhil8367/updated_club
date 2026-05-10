@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get the Git | GVP DSC</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/DSlogo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
+
     <nav id="navbar" class="scrolled">
         <div class="container nav-content">
             <a href="index.html" class="nav-logo">
@@ -17,29 +26,59 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="videos.html">Lectures</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
+
     <main class="container py-32">
-        <div class="glass p-8 md:p-16 reveal border-primary/20">
-            <h1 class="text-4xl md:text-6xl mb-6">Get the <span class="gradient-text">Git</span></h1>
-            <p class="text-primary font-bold mb-8 italic">11th November 2024</p>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="assets/images/5.jpg" class="rounded-3xl border border-white/10 w-full aspect-video object-cover">
-                <div class="space-y-6">
-                    <p class="text-text-muted">An interactive workshop introducing version control with Git and collaboration on GitHub. Participants learned to branch, commit, and collaborate on shared repositories.</p>
-                    <div class="flex gap-4">
-                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs">Version Control</span>
-                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs">Open Source</span>
-                    </div>
+        <div class="event-hero reveal">
+            <img src="assets/images/5.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-deep to-transparent"></div>
+        </div>
+
+        <div class="v2-content-card glass p-8 md:p-16 reveal delay-200">
+            <div class="flex flex-wrap items-end justify-between gap-8 mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold">Past Event • Workshop</span>
+                    <h1 class="text-4xl md:text-6xl mt-4 mb-2">Get the <span class="gradient-text">Git</span></h1>
+                    <p class="text-text-muted">Mastering version control and open-source collaboration on GitHub.</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/10 text-center min-w-[200px]">
+                    <span class="text-xs text-text-muted uppercase">Event Date</span>
+                    <p class="text-xl font-bold mt-1">11 NOV 2024</p>
                 </div>
             </div>
-            <div class="mt-12 text-center">
-                <a href="events.html" class="btn glass">Back to Events</a>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 space-y-8">
+                    <section>
+                        <h3 class="text-2xl mb-4">Event Overview</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            Department of Computer Science & Engineering (Data Science), under the esteemed guidance of Dr.Y. Anuradha, Associate Head of B.Tech CSE (DS), organized a successful event, chaired by Prof. A. B. Koteswara Rao, Principal. The workshop introduced students to the fundamentals of version control, repository management, and collaborative coding workflow. This session began with introduction of the github and creating an account of github and then explained how to upload an coding files into github also explained about linux file navigation commands like cd,pwd. This session is an useful for students to gain practical experience in intilizing respositories, merging code and collaboration on projects using github it is also used to prepared them to work in team-based environments, a skill crucial for internships, technical projects, and future careers.
+                        </p>
+                    </section>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass p-8 border-primary/30">
+                        <h4 class="font-bold mb-6">Key Takeaways</h4>
+                        <ul class="text-sm space-y-4 text-text-muted">
+                            <li class="flex gap-3">📌 <span class="flex-1">Understand the fundamentals of Git and version control</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Learn essential Git commands and syntax</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Create and manage repositories on GitHub</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Work with branching and merging</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1AjAjd2HlEAdY8r-bBYXCVCeL_UiZPymc?usp=drive_link" target="_blank" class="btn btn-primary w-full justify-center">View Event Images →</a>
+                    <a href="events.html" class="btn glass w-full justify-center">View Other Events</a>
+                </div>
             </div>
         </div>
     </main>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Duo | GVP DSC</title>
+    <title>The Golden Duo | GVP DSC</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/DSlogo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
+
     <nav id="navbar" class="scrolled">
         <div class="container nav-content">
             <a href="index.html" class="nav-logo">
@@ -17,25 +26,59 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="videos.html">Lectures</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
+
     <main class="container py-32">
-        <div class="glass p-8 md:p-16 reveal border-secondary/20">
-            <h1 class="text-4xl md:text-6xl mb-6">Golden <span class="gradient-text">Duo</span></h1>
-            <p class="text-secondary font-bold mb-8 italic">10th December 2022</p>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="assets/images/cc.jpeg" class="rounded-3xl border border-white/10 w-full aspect-video object-cover">
-                <div class="space-y-6">
-                    <p class="text-text-muted">A vibrant knowledge fusion event that featured "Data Talks" and the "Cook the Code" competition. A perfect blend of learning and competitive programming.</p>
+        <div class="event-hero reveal">
+            <img src="assets/images/cc.jpeg">
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-deep to-transparent"></div>
+        </div>
+
+        <div class="v2-content-card glass p-8 md:p-16 reveal delay-200">
+            <div class="flex flex-wrap items-end justify-between gap-8 mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold">Past Event • Summit</span>
+                    <h1 class="text-4xl md:text-6xl mt-4 mb-2">Golden <span class="gradient-text">Duo</span></h1>
+                    <p class="text-text-muted">Fusion of data talks and competitive coding challenges.</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/10 text-center min-w-[200px]">
+                    <span class="text-xs text-text-muted uppercase">Event Date</span>
+                    <p class="text-xl font-bold mt-1">10 DEC 2022</p>
                 </div>
             </div>
-            <div class="mt-12 text-center">
-                <a href="events.html" class="btn glass">Back to Events</a>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 space-y-8">
+                    <section>
+                        <h3 class="text-2xl mb-4">Event Overview</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            The Data Science Club presents the Golden DUO, an event filled with knowledge-sharing, coding challenges, and fun activities.
+                        </p>
+                    </section>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass p-8 border-primary/30">
+                        <h4 class="font-bold mb-6">Key Takeaways</h4>
+                        <ul class="text-sm space-y-4 text-text-muted">
+                            <li class="flex gap-3">📌 <span class="flex-1">Explore the world of Data Science</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Test coding prowess in 'Cook the Code'</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Engage in fun activities like 'Rapid Type'</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Learn fundamentals of Data Science</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://gvpce.ac.in/CSEDS/DS%20CLUB/data_dynasty_images.html" target="_blank" class="btn btn-primary w-full justify-center">View Event Images →</a>
+                    <a href="events.html" class="btn glass w-full justify-center">View Other Events</a>
+                </div>
             </div>
         </div>
     </main>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

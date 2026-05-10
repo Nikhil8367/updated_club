@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSA Workshop | GVP DSC</title>
+    <title>DSA Mastery | GVP DSC</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/DSlogo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
+
     <nav id="navbar" class="scrolled">
         <div class="container nav-content">
             <a href="index.html" class="nav-logo">
@@ -17,25 +26,57 @@
             </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="videos.html">Lectures</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
+
     <main class="container py-32">
-        <div class="glass p-8 md:p-16 reveal border-accent/20">
-            <h1 class="text-4xl md:text-6xl mb-6">DSA <span class="gradient-text">Workshop</span></h1>
-            <p class="text-accent font-bold mb-8 italic">28th December 2024</p>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="assets/images/poster.jpg" class="rounded-3xl border border-white/10 w-full aspect-video object-cover">
-                <div class="space-y-6">
-                    <p class="text-text-muted">A comprehensive review of key Data Structures and Algorithms. Focused on problem-solving strategies for placement interviews and competitive platforms.</p>
+        <div class="event-hero reveal">
+            <img src="assets/images/poster.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-deep to-transparent"></div>
+        </div>
+
+        <div class="v2-content-card glass p-8 md:p-16 reveal delay-200">
+            <div class="flex flex-wrap items-end justify-between gap-8 mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold">Past Event • Workshop</span>
+                    <h1 class="text-4xl md:text-6xl mt-4 mb-2">DSA <span class="gradient-text">Mastery</span></h1>
+                    <p class="text-text-muted">Deep dive into data structures and their algorithmic complexities with hands-on labs.</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-3xl border border-white/10 text-center min-w-[200px]">
+                    <span class="text-xs text-text-muted uppercase">Event Date</span>
+                    <p class="text-xl font-bold mt-1">28 DEC 2024</p>
                 </div>
             </div>
-            <div class="mt-12 text-center">
-                <a href="events.html" class="btn glass">Back to Events</a>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 space-y-8">
+                    <section>
+                        <h3 class="text-2xl mb-4">Event Overview</h3>
+                        <p class="text-text-muted leading-relaxed">
+                            To conclude the year on a high note, the club organized the DATASTRUCT Workshop, which focused on one of the most critical areas of computer science: data structures and algorithms. This workshop aimed to strengthen students’ problem-solving capabilities and enhance their understanding of algorithmic efficiency. The session covered a wide array of topics, including arrays, linked lists, trees, graphs, and sorting algorithms. Students were guided through hands-on coding exercises that demonstrated how to apply these concepts to real-world scenarios. This workshop not only prepared participants for technical interviews but also laid a strong foundation for their future endeavors in software engineering and data science.
+                        </p>
+                    </section>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass p-8 border-primary/30">
+                        <h4 class="font-bold mb-6">Key Takeaways</h4>
+                        <ul class="text-sm space-y-4 text-text-muted">
+                            <li class="flex gap-3">📌 <span class="flex-1">Revisit and strengthen DSA fundamentals</span></li>
+                            <li class="flex gap-3">📌 <span class="flex-1">Enhance coding and problem-solving skills</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/18xxAk3BjQ8y00iyCWzDOlpcHKyYfocoN?usp=drive_link" target="_blank" class="btn btn-primary w-full justify-center">View Event Images →</a>
+                    <a href="events.html" class="btn glass w-full justify-center">View Other Events</a>
+                </div>
             </div>
         </div>
     </main>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
