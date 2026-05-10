@@ -26,6 +26,24 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  caret-color: transparent;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, li, input, textarea, select {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+input, textarea {
+  cursor: text;
+  caret-color: auto;
+}
+
+a, button, .btn, label, select, .cursor-pointer {
+  cursor: pointer;
 }
 
 /* Moving Noise Mesh Background */
